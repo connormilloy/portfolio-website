@@ -1,11 +1,22 @@
-import BootScreen from './components/BootScreen';
+import { useState } from 'react';
+import BootScreen from './components/screens/BootScreen';
+import Desktop from './components/screens/Desktop';
 
 const App = () => {
-  return(
+  const [showBootScreen, setShowBootScreen] = useState(true);
+  const handleDismissBootScreen = () => {
+    setShowBootScreen(false);
+  };
+
+  return (
     <div className="App">
-      <BootScreen />
+      {showBootScreen ? (
+        <BootScreen onDismiss={handleDismissBootScreen} />
+      ) : (
+        <Desktop />
+      )}
     </div>
-  )
-}
+  );
+};
 
 export default App;
