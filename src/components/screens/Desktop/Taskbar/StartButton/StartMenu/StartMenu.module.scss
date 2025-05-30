@@ -1,0 +1,35 @@
+@import '/src/styles/variables.scss';
+
+$startMenuWidth: 300px;
+$startMenuHeight: 400px;
+
+.StartMenu {
+  display: flex;
+  width: $startMenuWidth;
+  height: $startMenuHeight;
+  background: $system-colour;
+  position: absolute;
+  bottom: $taskbar-height;
+  box-shadow: 1px -17px 49px -15px rgba(0,0,0,0.75);
+
+  &__VerticalBar {
+    width: 30px;
+    height: 100%;
+    background: #0a038c;
+    background: linear-gradient(180deg,rgba(10, 3, 140, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    display: flex;
+    justify-content: center;
+
+    > span {
+      writing-mode: vertical-rl;
+      transform: scale(-1);
+      color: white;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__MenuItems {
+    color: white;
+    width: 100%;
+  }
+}
