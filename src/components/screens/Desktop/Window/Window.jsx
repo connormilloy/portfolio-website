@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-
 import STYLES from './Window.module.scss';
 
 const Window = ({ project, onClose }) => {
