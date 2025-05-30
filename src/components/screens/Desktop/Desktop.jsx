@@ -9,29 +9,17 @@ import DesktopIcon from './DesktopIcon';
 import Window from './Window';
 
 const Desktop = () => {
-  const [openWindows, setOpenWindows] = useState({});
-
-  useEffect(() => {
-    const initialWindows = {};
-    Object.entries(projectData).forEach((project) => {
-      initialWindows[project.name] = false;
-    });
-    setOpenWindows(initialWindows);
-  }, []);
+  const [windowOpen, setWindowOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState('');
 
   const openWindow = (project) => {
-    if (openWindows[project]) return;
-    setOpenWindows((prevState) => ({
-      ...prevState,
-      [project]: true,
-    }));
+    setWindowOpen(true);
+    setActiveProject(project);
   };
 
-  const closeWindow = (project) => {
-    setOpenWindows((prevState) => ({
-      ...prevState,
-      [project]: false,
-    }));
+  const closeWindow = () => {
+    setWindowOpen(false);
+    setActiveProject('');
   };
 
   return (
@@ -48,16 +36,13 @@ const Desktop = () => {
         ))}
       </div>
 
-      {Object.keys(openWindows).map(
-        (project) =>
-          openWindows[project] && (
-            <Window
-              key={project}
-              project={projectData[project]}
-              onClose={() => closeWindow(project)}
-            />
-          )
+      {windowOpen && (
+        <Window
+          project={projectData[activeProject]}
+          onClose={() => closeWindow()}
+        />
       )}
+
       <Taskbar />
     </div>
   );
