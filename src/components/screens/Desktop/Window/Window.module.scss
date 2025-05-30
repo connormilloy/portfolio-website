@@ -1,3 +1,35 @@
-.Window {
+@import '/src/styles/variables.scss';
 
+.Window {
+  width: 500px;
+  height: 400px;
+  background: $system-colour;
+  border-style: inset;
+  border: 1px solid black;
+
+  &__header {
+    font-size: .75rem;
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    align-items: center;
+    background: linear-gradient(90deg,rgba(10, 3, 140, 1) 0%, rgba(19, 181, 235, 1) 100%);    color: white;
+  }
+
+  &__title {
+    padding-left: 10px;
+  }
+
+  &__closeButton {
+    padding-right: 10px;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.WindowContent {
+  padding: 10px;
+  &__image {
+    max-width: 100%;
+  }
 }

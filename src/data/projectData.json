@@ -1,0 +1,14 @@
+{
+  "project1": {
+    "name": "My Example Project 1",
+    "description": "This is an example project for demonstration purposes."
+  },
+  "project2": {
+    "name": "My Example Project 2",
+    "description": "This is another example project to showcase the structure."
+  },
+  "project3": {
+    "name": "My Example Project 3",
+    "description": "This project serves as a third example to illustrate the JSON structure."
+  }
+}
