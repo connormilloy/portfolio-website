@@ -1,0 +1,17 @@
+.DesktopIcon {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  cursor: pointer;
+
+  &__image {
+    width: 50px;
+  }
+
+  &__label {
+    margin-top: 0.25rem;
+  }
+}
