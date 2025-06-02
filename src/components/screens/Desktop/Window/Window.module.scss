@@ -1,8 +1,12 @@
 @import '/src/styles/variables.scss';
 
+// content aware cropping for image
 .Window {
-  width: 500px;
-  height: 400px;
+  position: absolute;
+  top: 80px;
+  right: 60px;
+  width: 800px;
+  height: 600px;
   background: $system-colour;
   border-style: inset;
   border: 1px solid black;

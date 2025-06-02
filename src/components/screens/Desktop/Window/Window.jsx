@@ -25,6 +25,7 @@ const Window = ({ project, onClose }) => {
       </div>
       <div className={STYLES.WindowContent}>
         <img src={image} className={STYLES.WindowContent__image} />
+        <span>{description}</span>
       </div>
     </div>
   );
